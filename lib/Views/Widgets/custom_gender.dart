@@ -19,8 +19,8 @@ class CustomGender extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 90),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               "Male",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),

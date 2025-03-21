@@ -19,9 +19,9 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: Text("BMI Calculttor"),
+        title: const Text("BMI Calculttor"),
       ),
-      body: Column(
+      body: const Column(
         children: [
           Expanded(child: ScetionGender()),
 

@@ -10,8 +10,8 @@ class CustomButton extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 50,
-      decoration: BoxDecoration(color: Colors.red),
-      child: Center(
+      decoration: const BoxDecoration(color: Colors.red),
+      child: const Center(
         child: Text(
           "MMI Calcultor",
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

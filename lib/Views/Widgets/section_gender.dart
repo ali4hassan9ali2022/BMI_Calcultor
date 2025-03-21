@@ -30,7 +30,7 @@ class _ScetionGenderState extends State<ScetionGender> {
               icon: FontAwesomeIcons.mars,
             ),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           Expanded(
             child: CustomGender(
               color:

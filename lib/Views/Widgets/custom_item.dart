@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CustomItem extends StatelessWidget {
-  const CustomItem({super.key, required this.title});
+  const CustomItem({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.onPressedAdd,
+    required this.onPressedRemove,
+  });
   final String title;
+  final String subTitle;
+  final Function() onPressedAdd;
+  final Function() onPressedRemove;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,15 +24,15 @@ class CustomItem extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
               color: Colors.grey,
             ),
           ),
           Text(
-            "22",
-            style: TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+            subTitle,
+            style: const TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,14 +40,14 @@ class CustomItem extends StatelessWidget {
               FloatingActionButton(
                 backgroundColor: Colors.blue,
                 mini: true,
-                onPressed: () {},
-                child: Icon(Icons.add),
+                onPressed: onPressedRemove,
+                child: const Icon(Icons.remove),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.blue,
                 mini: true,
-                onPressed: () {},
-                child: Icon(Icons.remove),
+                onPressed: onPressedAdd,
+                child: const Icon(Icons.add),
               ),
             ],
           ),

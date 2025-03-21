@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SectionHeight extends StatelessWidget {
+class SectionHeight extends StatefulWidget {
   const SectionHeight({super.key});
 
+  @override
+  State<SectionHeight> createState() => _SectionHeightState();
+}
+
+class _SectionHeightState extends State<SectionHeight> {
+  double height = 120;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +22,7 @@ class SectionHeight extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "HEIGHT",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
@@ -26,17 +32,29 @@ class SectionHeight extends StatelessWidget {
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
-                  "180",
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+                  "${height.round()}",
+                  style: const TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
-                SizedBox(width: 5),
-                Text(
+                const SizedBox(width: 5),
+                const Text(
                   "cm",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            Slider(value: 120, min: 80, max: 220, onChanged: (value) {}),
+            Slider(
+              value: height,
+              min: 80,
+              max: 220,
+              onChanged: (value) {
+                setState(() {
+                  height = value;
+                });
+              },
+            ),
           ],
         ),
       ),
