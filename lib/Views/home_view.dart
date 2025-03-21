@@ -1,7 +1,7 @@
 import 'package:bmi_calcultor/Views/Widgets/custom_button.dart';
-import 'package:bmi_calcultor/Views/Widgets/custom_item.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_height.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_gender.dart';
+import 'package:bmi_calcultor/Views/Widgets/weight_and_age_section.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -22,16 +22,7 @@ class HomeView extends StatelessWidget {
           Expanded(child: SectionHeight()),
           SizedBox(height: 20),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  Expanded(child: CustomItem(title: "WEIGHT")),
-                  SizedBox(width: 20),
-                  Expanded(child: CustomItem(title: "AGE")),
-                ],
-              ),
-            ),
+            child: WeightAndAgeSection(),
           ),
           SizedBox(height: 10),
           CustomButton(),
