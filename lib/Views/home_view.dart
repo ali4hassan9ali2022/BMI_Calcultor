@@ -1,3 +1,4 @@
+import 'package:bmi_calcultor/Views/Widgets/custom_button.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_gender.dart';
 import 'package:flutter/material.dart';
 
@@ -30,22 +31,12 @@ class HomeView extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(child: Row()),
-          Container(
-            width: double.infinity,
-            height: 50,
-            decoration: BoxDecoration(color: Colors.red),
-            child: Center(
-              child: Text(
-                "MMI Calcultor",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
+          Expanded(child: Row(
+          )),
+          CustomButton(),
         ],
       ),
     );
   }
 }
-
 
