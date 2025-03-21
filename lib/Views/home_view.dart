@@ -1,3 +1,4 @@
+import 'package:bmi_calcultor/Views/Widgets/section_gender.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -11,6 +12,40 @@ class HomeView extends StatelessWidget {
         centerTitle: true,
         title: Text("BMI Calculttor"),
       ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ScetionGender(),
+          ),
+          SizedBox(height: 20),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white.withOpacity(0.2),
+                ),
+              ),
+            ),
+          ),
+          Expanded(child: Row()),
+          Container(
+            width: double.infinity,
+            height: 50,
+            decoration: BoxDecoration(color: Colors.red),
+            child: Center(
+              child: Text(
+                "MMI Calcultor",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
