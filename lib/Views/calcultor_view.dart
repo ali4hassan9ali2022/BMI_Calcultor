@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CalcultorView extends StatelessWidget {
-  const CalcultorView({super.key});
-
+  const CalcultorView({
+    super.key,
+    required this.gender,
+    required this.result,
+    required this.age,
+  });
+  final bool gender;
+  final double result, age;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,23 +16,23 @@ class CalcultorView extends StatelessWidget {
         backgroundColor: Colors.black,
         title: const Text("Result", style: TextStyle(color: Colors.white)),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Gender Is: Male",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              "Gender Is: ${gender ? "Male" : "Female"}",
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
-              "Result Is: 55",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              "Result Is: ${result.round()}",
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
-              "Age Is: 22",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+              "Age Is: ${age.round()}",
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
             ),
           ],
         ),

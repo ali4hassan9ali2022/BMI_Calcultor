@@ -59,7 +59,7 @@ class _WeightAndAgeSectionState extends State<WeightAndAgeSection> {
                   }
                 });
               },
-              subTitle: "${widget.age}",
+              subTitle: "${widget.age.round()}",
               title: "AGE",
             ),
           ),

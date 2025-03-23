@@ -1,15 +1,17 @@
+import 'dart:math';
+
 import 'package:bmi_calcultor/Views/Widgets/custom_button.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_height.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_gender.dart';
 import 'package:bmi_calcultor/Views/Widgets/weight_and_age_section.dart';
 import 'package:bmi_calcultor/Views/calcultor_view.dart';
-import 'package:bmi_calcultor/Views/test/yara_view.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-  static double weight = 0;
-  static double age = 0;
+  static double weight = 40;
+  static double age = 10;
   static double height = 120;
   static bool isActive = true;
 
@@ -32,10 +34,14 @@ class HomeView extends StatelessWidget {
           const SizedBox(height: 10),
           CustomButton(
             onPressed: () {
-              // double result = weight / pow(height / 100, 2);
+              double result = weight / pow(height / 100, 2);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const YaraView()),
+                MaterialPageRoute(builder: (context) =>  CalcultorView(
+                  result: result,
+                  age: age,
+                  gender:isActive,
+                )),
               );
             },
           ),
