@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SectionHeight extends StatefulWidget {
-  const SectionHeight({super.key});
-
+   SectionHeight({super.key, required this.height});
+double height;
   @override
   State<SectionHeight> createState() => _SectionHeightState();
 }
 
 class _SectionHeightState extends State<SectionHeight> {
-  double height = 120;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,7 +33,7 @@ class _SectionHeightState extends State<SectionHeight> {
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
-                  "${height.round()}",
+                  "${widget.height.round()}",
                   style: const TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w900,
@@ -46,12 +47,12 @@ class _SectionHeightState extends State<SectionHeight> {
               ],
             ),
             Slider(
-              value: height,
+              value:widget.height,
               min: 80,
               max: 220,
               onChanged: (value) {
                 setState(() {
-                  height = value;
+                 widget.height = value;
                 });
               },
             ),

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bmi_calcultor/Views/Widgets/custom_button.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_height.dart';
 import 'package:bmi_calcultor/Views/Widgets/section_gender.dart';
@@ -12,6 +14,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  double weight = 0;
+  double age = 0;
+  double height = 0;
   bool isActive = true;
   @override
   Widget build(BuildContext context) {
@@ -21,16 +26,18 @@ class _HomeViewState extends State<HomeView> {
         centerTitle: true,
         title: const Text("BMI Calculttor"),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          Expanded(child: ScetionGender()),
+          const Expanded(child: ScetionGender()),
 
-          SizedBox(height: 20),
-          Expanded(child: SectionHeight()),
-          SizedBox(height: 20),
-          Expanded(child: WeightAndAgeSection()),
-          SizedBox(height: 10),
-          CustomButton(),
+          const SizedBox(height: 20),
+          Expanded(child: SectionHeight(height: height,)),
+          const SizedBox(height: 20),
+          Expanded(child: WeightAndAgeSection(age: age, weight: weight)),
+          const SizedBox(height: 10),
+          CustomButton(onTap: () {
+            double result = weight / pow(height / 100, 2);
+          }),
         ],
       ),
     );
