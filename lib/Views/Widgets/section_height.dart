@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
+
 class SectionHeight extends StatefulWidget {
    SectionHeight({super.key, required this.height});
-double height;
+  double height;
   @override
   State<SectionHeight> createState() => _SectionHeightState();
 }

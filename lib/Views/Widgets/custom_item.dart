@@ -38,12 +38,14 @@ class CustomItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FloatingActionButton(
+                heroTag: "remove",
                 backgroundColor: Colors.blue,
                 mini: true,
                 onPressed: onPressedRemove,
                 child: const Icon(Icons.remove),
               ),
               FloatingActionButton(
+                heroTag: "Add",
                 backgroundColor: Colors.blue,
                 mini: true,
                 onPressed: onPressedAdd,
